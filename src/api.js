@@ -1,13 +1,13 @@
 const URL_API = 'https://api.exchangerate.host/';
 
-function traerTasasdeCambio(base = 'USD', fecha = 'latest') {
+function traerTasasDeCambio(base = 'USD', fecha = 'latest') {
   return fetch(`${URL_API + fecha}?base=${base}`)
     .then((r) => r.json())
-    .then((r) => r);
+    .then((r) => r.rates);
 }
 
 function obtenerMonedas() {
-  return traerTasasdeCambio().then((tasasDeCambio) => Object.keys(tasasDeCambio.rates));
+  return traerTasasDeCambio().then((tasasDeCambio) => Object.keys(tasasDeCambio));
 }
 
-export { obtenerMonedas };
+export { obtenerMonedas, traerTasasDeCambio };
