@@ -25,10 +25,13 @@
             <input id="fecha" type="date" />
           </div>
           <small class="text-center text-muted mt-2 mb-5">Al no seleccionar una fecha. Busca las ultimas tasas</small>
+
           <div class="col col-4">
             <h4 class="text-center">Divisas</h4>
             <div id="monedas" class="list-group my-4"></div>
+            <div class="cargando escondido mx-auto" id="cargando-monedas"></div>
           </div>
+
           <div class="col">
             <h4 class="text-center">Tasas de cambio</h4>
             <div id="contenedor-tabla" class="my-4">
@@ -42,6 +45,7 @@
                 <tbody id="tasas"></tbody>
               </table>
             </div>
+            <div class="cargando escondido mx-auto" id="cargando-tasas"></div>
           </div>
         </div>
       </div>

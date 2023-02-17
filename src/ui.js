@@ -30,4 +30,28 @@ function mostrarTasasDeCambio(tasasDeCambio) {
   });
 }
 
-export { limitarInputFecha, mostrarTiposDeMonedas, mostrarTasasDeCambio };
+function mostrarCargandoMonedas() {
+  document.querySelector('#cargando-monedas').classList.remove('escondido');
+}
+
+function esconderCargandoMonedas() {
+  document.querySelector('#cargando-monedas').classList.add('escondido');
+}
+
+function mostrarCargandoTasasDeCambio() {
+  document.querySelector('#cargando-tasas').classList.remove('escondido');
+}
+
+function esconderCargandoTasasDeCambio() {
+  document.querySelector('#cargando-tasas').classList.add('escondido');
+}
+
+export {
+  limitarInputFecha,
+  mostrarTiposDeMonedas,
+  mostrarTasasDeCambio,
+  mostrarCargandoMonedas,
+  esconderCargandoMonedas,
+  mostrarCargandoTasasDeCambio,
+  esconderCargandoTasasDeCambio,
+};

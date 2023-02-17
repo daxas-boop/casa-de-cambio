@@ -1,4 +1,12 @@
-import { limitarInputFecha, mostrarTiposDeMonedas, mostrarTasasDeCambio } from './ui.js';
+import {
+  limitarInputFecha,
+  mostrarTiposDeMonedas,
+  mostrarTasasDeCambio,
+  mostrarCargandoTasasDeCambio,
+  esconderCargandoTasasDeCambio,
+  mostrarCargandoMonedas,
+  esconderCargandoMonedas,
+} from './ui.js';
 import { obtenerMonedas, traerTasasDeCambio } from './api.js';
 
 function actualizarTasasDeCambio() {
@@ -7,8 +15,11 @@ function actualizarTasasDeCambio() {
   if (!fecha) fecha = undefined;
   if (!moneda) moneda = undefined;
 
+  document.querySelector('#tasas').innerHTML = '';
+  mostrarCargandoTasasDeCambio();
   traerTasasDeCambio(moneda, fecha).then((tasasDeCambio) => {
     mostrarTasasDeCambio(tasasDeCambio);
+    esconderCargandoTasasDeCambio();
   });
 }
 
@@ -30,8 +41,10 @@ function manejarClickMoneda() {
 
 function inicializar() {
   limitarInputFecha();
+  mostrarCargandoMonedas();
   obtenerMonedas().then((monedas) => {
     mostrarTiposDeMonedas(monedas);
+    esconderCargandoMonedas();
     manejarClickMoneda();
     manejarCambioDeFecha();
   });
