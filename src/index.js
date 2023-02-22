@@ -9,12 +9,19 @@ import {
 } from './ui.js';
 import { obtenerMonedas, traerTasasDeCambio } from './api.js';
 
-function actualizarTasasDeCambio() {
-  let fecha = document.querySelector('#fecha').value;
-  let moneda = document.querySelector('.active').innerText;
-  if (!fecha) fecha = undefined;
-  if (!moneda) moneda = undefined;
+function obtenerFechaSeleccionada() {
+  const fecha = document.querySelector('#fecha').value;
+  return fecha ? fecha : undefined;
+}
 
+function obtenerMonedaSeleccionada() {
+  const $moneda = document.querySelector('.active');
+  return $moneda ? $moneda.innerText : undefined;
+}
+
+function actualizarTasasDeCambio() {
+  const fecha = obtenerFechaSeleccionada();
+  const moneda = obtenerMonedaSeleccionada();
   document.querySelector('#tasas').innerHTML = '';
   mostrarCargandoTasasDeCambio();
   traerTasasDeCambio(moneda, fecha).then((tasasDeCambio) => {
