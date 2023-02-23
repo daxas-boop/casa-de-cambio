@@ -15,18 +15,18 @@ function limitarInputFecha() {
 }
 
 function mostrarTasasDeCambio(tasasDeCambio) {
-  const keys = Object.keys(tasasDeCambio);
-  const $contenedorTasa = document.querySelector('#tasas');
-  $contenedorTasa.innerHTML = '';
-  keys.forEach((key) => {
-    const $separador = document.createElement('tr');
-    const $divisa = document.createElement('td');
+  const monedas = Object.keys(tasasDeCambio);
+  const $tabla = document.querySelector('#tasas');
+  $tabla.innerHTML = '';
+  monedas.forEach((moneda) => {
+    const $fila = document.createElement('tr');
+    const $moneda = document.createElement('td');
     const $tasa = document.createElement('td');
-    $divisa.innerText = key;
-    $tasa.innerText = tasasDeCambio[key];
-    $separador.appendChild($divisa);
-    $separador.appendChild($tasa);
-    $contenedorTasa.appendChild($separador);
+    $moneda.innerText = moneda;
+    $tasa.innerText = tasasDeCambio[moneda];
+    $fila.appendChild($moneda);
+    $fila.appendChild($tasa);
+    $tabla.appendChild($fila);
   });
 }
 

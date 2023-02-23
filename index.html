@@ -16,10 +16,10 @@
   <body>
     <header class="text-center p-1">
       <blockquote class="blockquote">
-        <h1>Casa de cambios</h1>
+        <h1 data-test="titulo">Casa de cambios</h1>
       </blockquote>
       <figcaption class="blockquote-footer">
-        <cite>r/argentina programa</cite>
+        <cite data-test="subtitulo">r/argentina programa</cite>
       </figcaption>
     </header>
     <main>
@@ -27,14 +27,14 @@
         <div class="row align-items-start">
           <div class="d-flex align-items-center justify-content-center mt-4">
             <p class="m-0 me-2">Selecciona una fecha:</p>
-            <input id="fecha" type="date" />
+            <input data-test="input-fecha" id="fecha" type="date" />
           </div>
           <small class="text-center text-muted mt-2 mb-5">Al no seleccionar una fecha. Busca las ultimas tasas</small>
 
           <div class="col col-4">
-            <h4 class="text-center">Divisas</h4>
-            <div id="monedas" class="list-group my-4"></div>
-            <div class="cargando escondido mx-auto" id="cargando-monedas"></div>
+            <h4 class="text-center">Monedas</h4>
+            <div data-test="monedas" id="monedas" class="list-group my-4"></div>
+            <div class="cargando escondido mx-auto" data-test="cargando-monedas" id="cargando-monedas"></div>
           </div>
 
           <div class="col">
@@ -43,14 +43,14 @@
               <table class="table table-striped text-center">
                 <thead>
                   <tr>
-                    <th scope="col">Divisa</th>
+                    <th scope="col">Moneda</th>
                     <th scope="col">Tasa</th>
                   </tr>
                 </thead>
-                <tbody id="tasas"></tbody>
+                <tbody data-test="tasas" id="tasas"></tbody>
               </table>
             </div>
-            <div class="cargando escondido mx-auto" id="cargando-tasas"></div>
+            <div class="cargando escondido mx-auto" data-test="cargando-tasas" id="cargando-tasas"></div>
           </div>
         </div>
       </div>

@@ -1,0 +1,16 @@
+{
+  "motd": {
+    "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+    "url": "https://exchangerate.host/#/donate"
+  },
+  "success": true,
+  "base": "AFN",
+  "date": "2023-02-20",
+  "rates": {
+    "AED": 0.041347,
+    "AFN": 1,
+    "ALL": 1.216872,
+    "AMD": 4.404797,
+    "ANG": 0.020201
+  }
+}
